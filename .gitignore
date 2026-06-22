@@ -6,6 +6,8 @@ build/
 .env
 server/db/*.sqlite
 server/db/*.db
+server/db/*.db-wal
+server/db/*.db-shm
 server/db/fizzquiz.db
 client/.vite/
 coverage/

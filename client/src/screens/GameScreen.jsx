@@ -54,7 +54,7 @@ function ScoreboardView({ scoreboard, myId }) {
 }
 
 export default function GameScreen() {
-  const { state, submitAnswer, me } = useGame();
+  const { state, submitAnswer } = useGame();
   const { live, mode, settings } = state;
   const livePlayers = useLivePlayers();
   const myId = mode === 'solo' ? 'me' : state.mp.playerId;
@@ -103,6 +103,7 @@ export default function GameScreen() {
               onSelect={submitAnswer}
               colorblind={settings.colorblind}
               accent={roundDef?.tint || '#6C4EF2'}
+              myId={myId}
             />
           </AnimatePresence>
 

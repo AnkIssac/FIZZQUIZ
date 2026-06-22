@@ -106,7 +106,7 @@ function AudioPlayer({ melody, qid }) {
   );
 }
 
-export default function QuestionCard({ question, reveal, mySelection, locked, onSelect, colorblind, accent }) {
+export default function QuestionCard({ question, reveal, mySelection, locked, onSelect, colorblind, accent, myId }) {
   const isTrueFalse = question.type === 'truefalse';
 
   // Keyboard hotkeys (A/B/C/D, and T/F for true-false).
@@ -125,7 +125,8 @@ export default function QuestionCard({ question, reveal, mySelection, locked, on
     return () => window.removeEventListener('keydown', handler);
   }, [locked, reveal, isTrueFalse, question.options.length, onSelect]);
 
-  const myDelta = reveal?.results?.find?.((r) => r.correct && (r.id === 'me' || r.chosenIndex === mySelection))?.delta;
+  const myResult = reveal?.results?.find?.((r) => r.id === myId);
+  const myDelta = myResult?.correct ? myResult.delta : 0;
 
   return (
     <motion.div
