@@ -50,9 +50,7 @@ the back end, and SQLite (via `better-sqlite3`) for a **1,050-question** offline
 
 ### 1. Install everything
 ```bash
-npm install        # installs root + server + client (via postinstall)
-# or explicitly:
-npm run install:all
+npm run install:all   # installs root + server + client dependencies
 ```
 
 ### 2. Seed the database (1,050+ questions)
