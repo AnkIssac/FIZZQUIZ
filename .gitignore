@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+.env
+server/db/*.sqlite
+server/db/*.db
+server/db/fizzquiz.db
+client/.vite/
+coverage/
